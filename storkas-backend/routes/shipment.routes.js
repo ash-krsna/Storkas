@@ -1,0 +1,7 @@
+const express = require("express");
+const router = express.Router();
+const { createShipment } = require("../controllers/shipment.controller");
+
+router.post("/", createShipment);
+
+module.exports = router;
