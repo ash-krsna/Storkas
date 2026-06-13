@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitForm } from "../lib/api.js";
 
 const initialState = {
   name: "",
@@ -11,16 +12,30 @@ const initialState = {
 
 function BusinessQuoteForm() {
   const [form, setForm] = useState(initialState);
-  const [success, setSuccess] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateField = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSuccess(true);
-    setForm(initialState);
+    setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const result = await submitForm("/api/business-quote", form);
+      setStatus({
+        type: "success",
+        message: `${result.message} Reference: ${result.referenceId}`,
+      });
+      setForm(initialState);
+    } catch (error) {
+      setStatus({ type: "error", message: error.message });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -64,12 +79,16 @@ function BusinessQuoteForm() {
         </label>
       </div>
 
-      <button type="submit" className="primary-button mt-6 w-full">
-        Get Logistics Proposal
+      <button type="submit" className="primary-button mt-6 w-full disabled:cursor-not-allowed disabled:opacity-70" disabled={isSubmitting}>
+        {isSubmitting ? "Sending..." : "Get Logistics Proposal"}
       </button>
-      {success && (
-        <p className="mt-4 rounded-2xl bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-800">
-          Your logistics proposal request has been received.
+      {status.message && (
+        <p
+          className={`mt-4 rounded-2xl px-4 py-3 text-sm font-semibold ${
+            status.type === "success" ? "bg-teal-50 text-teal-800" : "bg-red-50 text-red-700"
+          }`}
+        >
+          {status.message}
         </p>
       )}
     </form>

@@ -45,3 +45,35 @@ Node.js Version: 20.x or 22.x
 ```
 
 The project includes `vercel.json` with an SPA rewrite to `index.html`.
+
+## Backend API
+
+The MVP includes Vercel serverless API functions:
+
+```text
+GET  /api/health
+POST /api/shipment-request
+POST /api/partner-application
+POST /api/business-quote
+POST /api/contact
+```
+
+Run backend smoke tests locally with:
+
+```bash
+npm run test:api
+```
+
+Current backend behavior:
+
+- Validates required fields
+- Sanitizes string input
+- Returns a reference ID for each successful submission
+- Logs submissions to the serverless function log
+
+Next backend upgrades:
+
+- Persist submissions in a database
+- Send email or WhatsApp notifications
+- Add admin dashboard access
+- Add shipment tracking records
