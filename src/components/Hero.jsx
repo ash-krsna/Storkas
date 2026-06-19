@@ -9,7 +9,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-harbor/20 bg-white/80 px-4 py-2 text-sm font-semibold text-harbor shadow-sm">
             <CheckCircle2 className="h-4 w-4" />
-            Logistics for local commerce, freight, and fulfillment.
+            Backend-ready logistics MVP for local commerce.
           </div>
           <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight text-ink sm:text-6xl lg:text-7xl">
             Move goods with calm precision.
@@ -32,7 +32,7 @@ function Hero() {
               <Truck className="h-5 w-5 text-harbor" /> Local delivery and B2B movement.
             </span>
             <span className="inline-flex items-center gap-2">
-              <PackageCheck className="h-5 w-5 text-sage" /> One ecosystem for dispatch and fulfillment.
+              <PackageCheck className="h-5 w-5 text-sage" /> API-backed requests for dispatch and fulfillment.
             </span>
           </div>
         </div>

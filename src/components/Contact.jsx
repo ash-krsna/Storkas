@@ -50,7 +50,7 @@ function Contact() {
               <Mail className="h-5 w-5 text-harbor" /> hello@storkas.com
             </p>
             <p className="flex items-center gap-3 font-semibold text-slate-700">
-              <Phone className="h-5 w-5 text-harbor" /> +91 XXXXXXXXXX
+              <Phone className="h-5 w-5 text-harbor" /> Phone support launching soon
             </p>
             <p className="flex items-center gap-3 font-semibold text-slate-700">
               <MapPin className="h-5 w-5 text-harbor" /> India
