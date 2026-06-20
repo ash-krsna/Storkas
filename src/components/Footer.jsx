@@ -3,7 +3,7 @@ const footerLinks = {
   Network: ["Route planning", "Partner coordination", "Reverse logistics"],
   Services: ["Express", "Freight", "Cold chain", "Warehousing"],
   Partners: ["Fleet owners", "Delivery teams", "Warehouse operators"],
-  Contact: ["hello@storkas.com", "+91 XXXXXXXXXX", "India"],
+  Contact: ["hello@storkas.com", "Phone support launching soon", "India"],
 };
 
 function Footer() {
@@ -23,7 +23,7 @@ function Footer() {
           ))}
         </div>
         <div className="mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">
-          © 2026 Storkas. Built for logistics, local commerce, partners, and future movement.
+          Copyright 2026 Storkas. Built for logistics, local commerce, partners, and future movement.
         </div>
       </div>
     </footer>

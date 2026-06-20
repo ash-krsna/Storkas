@@ -46,6 +46,12 @@ Node.js Version: 20.x or 22.x
 
 The project includes `vercel.json` with an SPA rewrite to `index.html`.
 
+After deployment, verify the backend with:
+
+```text
+https://your-vercel-domain.vercel.app/api/health
+```
+
 ## Backend API
 
 The MVP includes Vercel serverless API functions:
